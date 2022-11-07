@@ -155,3 +155,7 @@ EMAIL_HOST_USER=os.environ.get('e_mail')
 EMAIL_HOST_PASSWORD=os.environ.get('app_password')
 
 django_heroku.settings(locals())
+
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("application/javascript",".js",True)
