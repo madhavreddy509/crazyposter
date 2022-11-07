@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="intro intro-single route bg-image">
+  <div class="overlay-mf"></div>
+  <div class="intro-content display-table">
+    <div class="table-cell">
+      <div class="container">
+        <h2 class="intro-title mb-4">POST DELETE</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="form-comments">
+  <div class="title-box-2">
+    <h3 class="title-left">
+        Delete Post
+    </h3>
+  </div>
+  <form class="form-mf" method='POST'>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+            <h2>Are you sure you want to delete the post "{{ object.title }}"</h2>
+        </div>
+      </div>
+      
+      
+      </div>
+      <div class="col-md-4">
+        <button type="submit" class="button button-a button-big button-rouded btn btn-outline-danger">Yes, Delete</button>
+        
+        <button class="button button-a button-big button-rouded btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">Cancel</button>
+     
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+
+{% endblock content %}

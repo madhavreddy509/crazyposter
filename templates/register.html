@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+ <section class="paralax-mf footer-paralax bg-image sect-mt4 route">
+    <div class="overlay-mf"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="contact-mf">
+            <div id="contact" class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="title-box-2">
+                    <h5 class="title-left">
+                      Join Today
+                    </h5>
+                  </div>
+                  <div>
+                      <form method="post">
+                        {% csrf_token %}
+                      <div id="sendmessage">Your message has been sent. Thank you!</div>
+                      <div id="errormessage"></div>
+                      <div class="row">
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            {{ form|crispy }}
+                    
+                          </div>
+                        </div>
+                       
+                        <div class="col-md-12">
+                          <button type="submit" class="button button-a button-big button-rouded"> Sign Up </button>
+                        </div>
+                      </div>
+                    </form>
+
+                    <div class="border-top pt-3">
+                      <small class="text-muted">
+                        already have an account? <a class="ml-2"  href="{% url 'login' %}">Login</a>
+          
+                      </small>
+                  </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="title-box-2 pt-4 pt-md-0">
+                    <h5 class="title-left">
+                      Get in Touch
+                    </h5>
+                  </div>
+                  <div class="more-info">
+                    <p class="lead">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
+                      expedita aperiam aliquid at.
+                      Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
+                      mollitia inventore?
+                    </p>
+                    <ul class="list-ico">
+                      <li><span class="ion-ios-location"></span> Visakhapatnam </li>
+                      <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
+                      <li><span class="ion-email"></span> madhavreddy00570@gmail.com </li>
+                    </ul>
+                  </div>
+                  <div class="socials">
+                    <ul>
+                      <li><a href="https://github.com/madhavreddy509"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
+                      <li><a href="https://instagram.com/imm_luckyy?igshid=YmMyMTA2M2Y="><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                      <li><a href="https://twitter.com/madhavreddy509?s=09"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li>
+                      <li><a href="https://www.linkedin.com/in/madhav-reddy-telukutla-6a3915244"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% endblock content %}
