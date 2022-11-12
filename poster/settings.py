@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hw!v@h&59$)a)v)c57yg5+1(w0%=(+)02#)ct-f&-)-_1efx44'
 #SECRET_KEY=os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
  
 ALLOWED_HOSTS = ['postcrazyapp.herokuapp.com']
 
