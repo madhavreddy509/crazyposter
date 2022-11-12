@@ -11,6 +11,10 @@
 
       <form method="POST">
         {% csrf_token %}
+        <h2 class="heading">
+        <div id="sendmessage">Your message has been sent. Thank you!</div>
+        <div id="errormessage"></div>
+        </h2>
           <h3>Credentials</h3>
           <div class="inputBox">
               <span class="fas fa-user"> Username </span>
