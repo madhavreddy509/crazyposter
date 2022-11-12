@@ -14,7 +14,15 @@
         {% csrf_token %}
           <h3> Join Today</h3>
           <div id="sendmessage">Your message has been sent. Thank you!</div>
-           <div id="errormessage"></div>
+           <div id="errormessage" style="color:white;">
+            {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                   <h1> <span> {{ error }} </span></h1>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+           </div>
           <div class="inputBox">
               <span class="fas fa-user"> Username </span>
               {{ form.username }}
@@ -32,10 +40,7 @@
         <span class="fas fa-lock"> re_Enter </span>
         {{ form.password2 }}
     </div>
-       
-          
           <input type="submit" value="  Sign Up " class="btn">
-          
       </form>
   </div>
 
