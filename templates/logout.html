@@ -1,20 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<section  class="blog-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 class="title-a">
-              You have been logged out
-            </h3>
-            <p class="subtitle-a">
-              <a href="{% url 'login' %}">Log In Again</a> 
-            </p>
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="contact">
+
+  <h1 class="heading"> <span>You Have Been </span> Logged Out</h1>
+  <h1 class="heading">
+<a class="ml-2" href="{% url 'login' %}">Login In Again</a>
+  </a>
+</h1>
+</section>
 {% endblock content %}

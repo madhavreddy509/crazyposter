@@ -4,78 +4,28 @@
 {% block content %}
 {% load static %}   
 
-<div class="intro intro-single route bg-image">
-  <div class="overlay-mf"></div>
-  <div class="intro-content display-table">
-    <div class="table-cell">
-      <div class="container">
-        <h2 class="intro-title mb-4">ROCK ONN !</h2>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="blogs" id="blogs">
 
+  <h1 class="heading"> Posts </h1>
 
-
-<section id="blog" class="blog-mf sect-pt4 route">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="title-box text-center">
-          <h3 class="title-a">
-            POST'S
-          </h3>
-          <p class="subtitle-a">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </p>
-          <div class="line-mf"></div>
-        </div>
-      </div>
-    </div>
-   
-    <div class="row">
-      {% for post in posts %}
-      <div class="col-md-4">
-        <div class="card card-blog">
-          <div class="card-img">
-            <a href="{% url 'post-detail' post.id %}"><img src={{post.photo.url}} alt="" class="img-fluid"></a>
+  <div class="box-container">
+    {% for post in posts %}
+      <div class="box">
+          <div class="image">
+            <a href="{% url 'post-detail' post.id %}">  <img src={{post.photo.url}} alt=""> </a>
           </div>
-          <div class="card-body">
-            <div class="card-category-box">
-              <div class="card-category">
-                <h6 class="category">Travel</h6>
-              </div>
-            </div>
-            <h3 class="card-title"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h3>
-            <p class="card-description">
-              {{ post.content }}
-            </p>
+          <div class="content">
+            <h1><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h1>
+              <span>by {{ post.author }} /{{ post.date_posted|date:"F d, Y" }}</span>
+              <p style="word-wrap: break-word;"> {{ post.content }}</p>
+              <a href="{% url 'user-posts' post.author.username %}" class="btn">See All posts by this author</a>
           </div>
-          <div class="card-footer">
-            <div class="post-author">
-              <a href="{% url 'user-posts' post.author.username %}">
-                <img src="{{ post.author.profile.image.url }}" alt="" class="avatar rounded-circle">
-                <span class="author" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</span>
-              </a>
-            </div>
-            <div class="post-date">
-              <span class="ion-ios-clock-outline"></span> {{ post.date_posted|date:"F d, Y" }}
-            </div>
-          </div>
-        </div>
       </div>
       {% endfor %}
     </div>
-  </div>
-</section>
- 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="contact-mf">
-<div class="col-md-6">
-  <div class="title-box-2 pt-4 pt-md-0">
 
+    <div class="links">
+      
 {% if is_paginated %}
 
 {% if page_obj.has_previous %}
@@ -97,10 +47,8 @@
 {% endif %}
 
 {% endif %}
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+    </div>
+
+</section>
 {% endblock content %}
